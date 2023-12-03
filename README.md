@@ -1,2 +1,2 @@
 # sparql-vis-graph
-Javascript for visualizing query from Sparql.
+Javascript methods for visualizing queries from Sparql.
