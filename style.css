@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  padding: 20px;
+  font-family: "Share Tech", sans-serif;
+  font-size: 68px;
+  color: white;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: left;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  text-shadow: 8px 8px 10px #0000008c;
+  background-color: #343a40;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
+}
+br {
+  display: block;
+  content: ""; /* clears default height */
+  margin-top: 25px;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: #1f8827;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #1f8827, 1px 2px 0px #1f8827, 1px 3px 0px #1f8827,
+    1px 4px 0px #1f8827, 1px 5px 0px rgb(189, 183, 183),
+    1px 6px 0px rgb(189, 183, 183), 1px 10px 5px rgba(16, 16, 16, 0.5),
+    1px 15px 10px rgba(16, 16, 16, 0.4), 1px 20px 30px rgba(16, 16, 16, 0.3),
+    1px 25px 50px rgba(16, 16, 16, 0.2);
+}
+:root {
+  --input-color: #000000;
+  --input-border: #cdd9ed;
+  --input-background: #fff;
+  --input-placeholder: #cbd1dc;
+
+  --input-border-focus: #275efe;
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #eef4ff;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678efe;
+}
+
+.form-field {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+  }
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  width: 50%;
+  & > span,
+  .form-field {
+    white-space: nowrap;
+    display: block;
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+  .form-field {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  & > span {
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--group-color);
+    background: var(--group-background);
+    border: 1px solid var(--group-border);
+    transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+  }
+  &:focus-within {
+    & > span {
+      color: var(--group-color-focus);
+      background: var(--group-background-focus);
+      border-color: var(--group-border-focus);
+    }
+  }
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+Center body {
+  min-height: 100vh;
+  font-family: "Mukta Malar", Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #f5f9ff;
+  .form-group {
+    max-width: 360px;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+Button {
+  font-size: 0.5em;
+  background: #1f8827;
+  color: #fff;
+  border: 0.25rem solid #1f8827;
+  padding: 0.85em 0.75em;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+button:hover {
+  color: #1f8827;
+}
+button::after {
+  content: "";
+  background: #ecf0f1;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+}
+button[class^="slide"]::after {
+  transition: all 0.35s;
+}
+button[class^="slide"]:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+}
+button.slide_from_left::after {
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+}
+button.slide_from_right::after {
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+}
+button.slide_from_top::after {
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+}
+button.slide_from_bottom::after {
+  left: 0;
+  right: 0;
+  top: 100%;
+  bottom: -100%;
+}
+button[class^="grow"]::after {
+  transition: all 0.3s ease;
+}
+button[class^="grow"]:hover::after {
+  transition: all 0.3s ease-out;
+}
+button.grow_box::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+}
+button.grow_box:hover::after {
+  transform: scale(1, 1);
+}
+button.grow_ellipse::after {
+  border-radius: 50%;
+  left: -50%;
+  right: -50%;
+  top: -150%;
+  bottom: -150%;
+  line-height: 8.34em;
+  transform: scale(0, 0);
+}
+button.grow_ellipse:hover::after {
+  transform: scale(1, 1);
+}
+button.grow_skew_forward::after {
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+}
+button.grow_skew_forward:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+button.grow_skew_backward::after {
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+}
+button.grow_skew_backward:hover::after {
+  transform: skewX(45deg) scale(1, 1);
+}
+button.grow_spin::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0) rotate(-180deg);
+}
+button.grow_spin:hover::after {
+  transform: scale(1, 1) rotate(0deg);
+}

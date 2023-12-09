@@ -1,19 +1,41 @@
-<!DOCTYPE html>
-<html>
+<<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Sparql Visualiazation Test</title>
-    <script src="sparql-vis-graph.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARQL Query Visualiser</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>Test Sparql Visualiazation Graph</h1>
-    <input type="text" id="Iri_id" placeholder="IRI" /><br />
+    <h1>SPARQL Query Visualiser</h1>
+
+    <input
+      class="form-field"
+      type="text"
+      id="sparqlEndpoint"
+      style="width: 80%"
+      placeholder="Enter SPARQL Endpoint"
+    />
+
     <textarea
-      id="Sparql_query"
+      class="form-field"
       rows="15"
       cols="80"
-      placeholder="Write your Sparql query"
-    ></textarea
-    ><br />
-    <button type="button" onclick="Hello()">Query</button>
+      id="sparqlQuery"
+      style="width: 80%"
+      placeholder="Enter SPARQL Query"
+    ></textarea>
+
+    <button class="slide_from_left" onclick="executeQuery()">
+      Execute Query
+    </button>
+
+    <!--<div id="result"></div>-->
+
+    <!-- Reference the external JavaScript file without type="module" -->
+    <script src="sparql-vis-graph.js"></script>
+
+    <!-- Include axios library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
